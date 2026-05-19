@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Resume Parser</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        background: #111827;
+        color: white;
+        text-align: center;
+        padding: 50px;
+      }
+
+      .box {
+        width: 500px;
+        margin: auto;
+        padding: 20px;
+        background: #1f2937;
+        border-radius: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      .result {
+        margin-top: 20px;
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <h1>Resume Parser</h1>
+
+      <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="resume" required />
+
+        <br /><br />
+
+        <button>Upload</button>
+      </form>
+
+      {% if result %}
+
+      <div class="result">
+        <h3>Extracted Details</h3>
+
+        <p><b>Name:</b> {{result.name}}</p>
+
+        <p><b>Email:</b> {{result.email}}</p>
+
+        <p><b>Phone:</b> {{result.phone}}</p>
+
+        <p><b>Skills:</b> {{result.skills}}</p>
+      </div>
+
+      {% endif %}
+    </div>
+  </body>
+</html>
